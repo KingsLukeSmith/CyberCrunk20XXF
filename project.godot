@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="CyberCrunk20XX"
-run/main_scene="res://TestCSG/GeneratedMaze.tscn"
+run/main_scene="res://GeneratedMaze.tscn"
 config/icon="res://icon.png"
 
 [physics]
