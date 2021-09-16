@@ -34,7 +34,7 @@ func _ready():
 		
 func reset():
 	for child in get_children():
-		if child.get_class()!= "Camera":
+		if not child.get_class() in ["Camera","Timer"]:
 			child.queue_free()
 	randomize()
 	#STARTING tile
@@ -68,12 +68,11 @@ func reset():
 #			q.append(current)
 				
 			
-func _physics_process(delta):
-	yield(get_tree(), "idle_frame")
+func create_map():
 	#check previous frame collisions
 	if not maze_complete:
 		
-		if last_piece.get_node("Area").get_overlapping_areas().size()==0:
+		if last_piece.get_node("Area").get_overlapping_areas().size()<=1:
 			print("no collisions, keeping")
 			room_count+=1
 			add_positions(q,last_piece) #add new position 3d
@@ -102,7 +101,6 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept"):
 		reset()
-	
-	
-
-
+func _on_Timer_timeout():
+	print("time")
+	create_map()

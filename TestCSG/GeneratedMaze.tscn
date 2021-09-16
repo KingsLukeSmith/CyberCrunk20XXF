@@ -10,3 +10,9 @@ script = ExtResource( 1 )
 transform = Transform( 0.841506, 0.353553, -0.408494, -0.129409, 0.866025, 0.482963, 0.524519, -0.353553, 0.774519, -9, 7, 14 )
 current = true
 script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
