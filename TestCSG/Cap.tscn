@@ -5,7 +5,8 @@ albedo_color = Color( 0, 0, 0, 1 )
 
 [node name="Cap" type="Spatial"]
 
-[node name="CSGBox" type="CSGBox" parent="."]
+[node name="Mesh" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+use_collision = true
 height = 1.0
 material = SubResource( 1 )
